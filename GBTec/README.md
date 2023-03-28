@@ -2,26 +2,31 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
 
-## Development server
+##Functionality
+The web application provides the following functionality:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Photo Search: Users can enter a search term and click the search button to retrieve up to 10 photos related to the search term. If there are more results, users can click the "Load More" button to display additional results.
+Photo Details: Users can click on a photo to view more details, including the photo's description, author, and download link.
 
-## Code scaffolding
+##Technical Implementation
+The Photo Search web application was built using the following technologies:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Angular
+Bootstrap
+Unsplash API
+TypeScript
 
-## Build
+##Architecture
+The Photo Search web application follows the following architecture:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Components: Angular components are used to encapsulate the application's views and behavior. The application contains two main components: the SearchComponent for the photo search functionality and the DetailsComponent for displaying photo details.
+Services: Angular services are used to encapsulate the application's business logic and to communicate with external APIs. The UnsplashService is used to call the Unsplash API to retrieve photo data.
+Models: TypeScript models are used to represent photo data retrieved from the Unsplash API.
 
-## Running unit tests
+##Installation
+To install and run the Photo Search web application, follow these steps:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Clone the repository to your local machine.
+Install the required dependencies using the following command: npm install.
+Start the web application using the following command: ng serve.
+Open a web browser and navigate to http://localhost:4200
