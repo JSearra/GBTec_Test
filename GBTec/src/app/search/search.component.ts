@@ -8,15 +8,20 @@ import { UnsplashService } from '../unsplash.service';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-  query: string = '';
-  photos: any[] = [];
-  page: number = 1;
+
+  query: string = ''; // The search query entered by the user
+  photos: any[] = []; // The array of photos returned by the Unsplash API
+  page: number = 1;   // The current page number of the search results
   photosToShow: any[] = [];
 
   constructor(private unsplashService: UnsplashService, private router: Router) { }
 
   ngOnInit(): void {
   }
+
+  /**
+   * Executes a search based on the user's query.
+   */
 
   searchPhotos(): void {
     if (this.query.trim() === '') {
@@ -33,13 +38,18 @@ export class SearchComponent implements OnInit {
       );
   }
 
+  /**
+   * Loads the next page of search results.
+   * I've left in some of the code and console logs from where I was trying to fix the paging issue
+   */
+
   loadMore(): void {
-    
+
     console.log('Before', this.photos.length);
     //this.photosToShow = this.photos.slice(0, 20);
     this.page++;
     this.searchPhotos()
-  console.log('After', this.photos.length); 
-  
+    console.log('After', this.photos.length);
+
   }
 }

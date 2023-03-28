@@ -6,6 +6,8 @@ import { Constants } from './config/constants';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
+// Ive left some console logs of where I was checking things were working. 
 export class AppComponent implements OnInit {
   title = Constants.TitleOfSite;
   api_endpoint = Constants.API_ENDPOINT;

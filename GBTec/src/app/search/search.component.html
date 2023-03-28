@@ -1,22 +1,31 @@
-<div class="container">
+<div class="container pt-4">
     <h1>Search for Photos</h1>
     <form (ngSubmit)="searchPhotos()">
-      <div class="form-group">
-        <input type="text" class="form-control" [(ngModel)]="query" name="query" placeholder="Enter search term">
-      </div>
-      <button type="submit" class="btn btn-primary">Search</button>
+        <div class="form-group">
+            <div class="container">
+                <div class="row pt-8">
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" [(ngModel)]="query" name="query"
+                            placeholder="Enter search term">
+                    </div>
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-primary">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </form>
-  
-    <div class="row">
-      <div class="col-md-4 mb-4" *ngFor="let photo of photosToShow">
-        <a [routerLink]="['/details', photo.id]">
-          <img src="{{ photo.urls.small }}" alt="{{ photo.alt_description }}" class="img-thumbnail">
-        </a>
-      </div>
+
+    <div class="row pt-4">
+        <div class="col-md-4 mb-4" *ngFor="let photo of photosToShow">
+            <a [routerLink]="['/details', photo.id]">
+                <img src="{{ photo.urls.small }}" alt="{{ photo.alt_description }}" class="img-thumbnail rounded">
+            </a>
+        </div>
     </div>
-  
+
     <div class="text-center">
-      <button class="btn btn-primary mt-3" (click)="loadMore()" >Load More</button>
+        <button class="btn btn-primary mt-3" (click)="loadMore()">Load More</button>
     </div>
-  
+
 </div>

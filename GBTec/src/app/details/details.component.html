@@ -1,8 +1,17 @@
-<div class="details">
-    <img [src]="photo.urls.regular">
-    <div class="info">
-      <h2>{{ photo.alt_description }}</h2>
-      <p>{{ photo.description }}</p>
-      <a [href]="photo.user.links.html">{{ photo.user.name }}</a>
+<div class="container pt-4">
+    <div class="row">
+      <div class="col-md-6">
+        <img src="{{ photo.urls.regular }}" alt="{{ photo.alt_description }}" class="img-fluid">
+      </div>
+      <div class="col-md-6">
+        <h2>{{ photo.description }}</h2>
+        <p>{{ photo.alt_description }}</p>
+        <ul>
+          <li><strong>Photographer:</strong> {{ photo.user.name }}</li>
+          <li><strong>Location:</strong> {{ photo.location.title }}</li>
+          <li><strong>Dimensions:</strong> {{ photo.width }} x {{ photo.height }}</li>
+          <li><strong>Download: </strong> <a href="{{ photo.links.download }}">Download</a></li>
+        </ul>
+      </div>
     </div>
   </div>
