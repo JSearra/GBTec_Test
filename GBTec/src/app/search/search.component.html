@@ -1,0 +1,17 @@
+<div class="search">
+    <input type="text" [(ngModel)]="query" placeholder="Search for photos...">
+    <button (click)="search()">Search</button>
+  </div>
+  
+  <div class="results">
+    <div class="photo" *ngFor="let photo of photos">
+      <a [routerLink]="['/details', photo.id]">
+        <img [src]="photo.urls.thumb">
+      </a>
+    </div>
+  </div>
+  
+  <div class="pagination">
+    <button [disabled]="page === 1" (click)="prevPage()">Prev</button>
+    <button [disabled]="photos.length < 10" (click)="nextPage()">Next</button>
+  </div>
